@@ -1,0 +1,17 @@
+dependencies:
+  pre:
+    - echo "deb http://packages.erlang-solutions.com/ubuntu precise contrib" | sudo tee -a /etc/apt/sources.list.d/erlang.list
+    - wget http://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc
+    - sudo apt-key add erlang_solutions.asc
+    - wget http://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && sudo dpkg -i erlang-solutions_1.0_all.deb
+    - sudo apt-get update
+    - sudo apt-get install erlang elixir
+  cache_directories:
+    - ~/dependencies
+    - ~/.mix
+    - _build
+    - deps
+
+test:
+  override:
+    - ./script_circleci_test.sh
