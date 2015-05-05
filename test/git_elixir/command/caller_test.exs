@@ -3,13 +3,13 @@ defmodule GitElixir.Command.CallerTest do
   doctest GitElixir.Command.Caller
 
   setup_all do
-    _tmp_dir = System.tmp_dir!
+    tmp_dir = System.tmp_dir!
     chars = ?a..?z
     :random.seed(:erlang.now)
     reducer = fn (_, acc) ->
       acc <> << Enum.at(chars, round(Float.floor(:random.uniform * Enum.count(chars)))) >>
     end
-    dir_name = 1..10 |> Enum.reduce("git_elixir_", reducer)
+    dir_name = tmp_dir <> (1..10 |> Enum.reduce("git_elixir_", reducer))
     System.cmd "mkdir", [dir_name]
     System.cmd "git", ["init"], cd: dir_name
 
