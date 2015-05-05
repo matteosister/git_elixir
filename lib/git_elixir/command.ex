@@ -1,4 +1,5 @@
 defmodule GitElixir.Command do
+
   @doc """
   Retuns the status command args
 
@@ -6,9 +7,7 @@ defmodule GitElixir.Command do
     iex> GitElixir.Command.status
     ["status", "--porcelain"]
   """
-  def status do
-    ["status", "--porcelain"]
-  end
+  def status, do: ["status", "--porcelain"]
 
   @doc """
   Retuns the init command args
@@ -16,8 +15,25 @@ defmodule GitElixir.Command do
   Example
     iex> GitElixir.Command.init
     ["init"]
-  """
-  def init do
+    iex> GitElixir.Command.init(true)
+    ["--bare", "init"]
+    iex> GitElixir.Command.init(100)
     ["init"]
-  end
+  """
+  def init(bare \\ false)
+  def init(bare) when bare == true, do: ["--bare", "init"]
+  def init(_), do: ["init"]
+
+  @doc """
+  Adds elements to the index.
+  The argument gets passed to the git add "..." command, so you can use wildcartd etc.
+
+  Example
+    iex> GitElixir.Command.add
+    ["add", "."]
+    iex> GitElixir.Command.add("src/")
+    ["add", "src/"]
+  """
+  def add(what \\ "."), do: ["add", what]
+
 end
