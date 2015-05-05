@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GitElixir.Command</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+    <link rel="stylesheet" href="css/elixir.css" type="text/css" media="screen" charset="utf-8" />
+    <script type="text/javascript" charset="utf-8">
+      relpath = '';
+      if (relpath != '') relpath += '/';
+    </script>
+
+    <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/highlight.pack.js"></script>
+    <script type="text/javascript" charset="utf-8">
+      hljs.initHighlightingOnLoad();
+      hljs.configure({languages: []}); //disable autodetect
+    </script>
+  </head>
+
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+
+    <section id="content">
+      <div class="breadcrumbs">GitElixir v0.0.1 &rarr; <a href="overview.html">Overview</a> &rarr; <a href="GitElixir.html">GitElixir</a> &rarr; <a href="GitElixir.Command.html">Command</a></div>
+      <h1>
+        GitElixir.Command
+        
+      </h1>
+
+      <ul class="summary_links">
+        
+          <li><a href="#summary">Summary</a></li>
+        
+        
+        
+          <li><a href="#functions_details">Functions</a></li>
+        
+        
+        
+      </ul>
+
+      
+
+      
+        <a href="https://github.com/matteosister/git_elixir/blob/master/lib/git_elixir/command.ex#L1" class="view_source">Source</a>
+      
+
+      
+        <h2 id="summary">Summary<span class="detail_header_links"><a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a></span></h2>
+        <table class="summary">
+          <tr>
+  <td class="summary_signature"><a href="#add/1">add(what \\ &quot;.&quot;)</a></td>
+  
+    <td class="summary_synopsis"><p>Adds elements to the index.
+The argument gets passed to the git add “…” command, so you can use wildcartd etc</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#init/1">init(bare \\ false)</a></td>
+  
+    <td class="summary_synopsis"><p>Retuns the init command args</p>
+</td>
+  
+</tr>
+<tr>
+  <td class="summary_signature"><a href="#status/0">status()</a></td>
+  
+    <td class="summary_synopsis"><p>Retuns the status command args</p>
+</td>
+  
+</tr>
+
+        </table>
+      
+
+      
+
+      
+        <section id="functions_details" class="details_list">
+          <h2>Functions</h2>
+          <section class="detail">
+  <div class="detail_header" id="add/1">
+    <span class="signature"><strong>add(what \\ &quot;.&quot;)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#add/1" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    <p>Adds elements to the index.
+The argument gets passed to the git add “…” command, so you can use wildcartd etc.</p>
+<p>Example
+  iex&gt; GitElixir.Command.add
+  ["add", "."]
+  iex&gt; GitElixir.Command.add(“src/“)
+  ["add", "src/"]</p>
+
+  </section>
+  
+    <a href="https://github.com/matteosister/git_elixir/blob/master/lib/git_elixir/command.ex#L37" class="view_source">Source</a>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="init/1">
+    <span class="signature"><strong>init(bare \\ false)</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#init/1" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    <p>Retuns the init command args</p>
+<p>Example
+  iex&gt; GitElixir.Command.init
+  ["init"]
+  iex&gt; GitElixir.Command.init(true)
+  ["--bare", "init"]
+  iex&gt; GitElixir.Command.init(100)
+  ["init"]</p>
+
+  </section>
+  
+    <a href="https://github.com/matteosister/git_elixir/blob/master/lib/git_elixir/command.ex#L23" class="view_source">Source</a>
+  
+</section>
+<section class="detail">
+  <div class="detail_header" id="status/0">
+    <span class="signature"><strong>status()</strong></span>
+    <div class="detail_header_links">
+      <span class="detail_type">(function)</span>
+      <a href="#status/0" class="detail_link" title="Link to this function">#</a>
+      <a class="to_top_link" href="#content" title="To the top of the page">&uarr;</a>
+    </div>
+  </div>
+  
+  <section class="docstring">
+    <p>Retuns the status command args</p>
+<p>Example
+  iex&gt; GitElixir.Command.status
+  ["status", "--porcelain"]</p>
+
+  </section>
+  
+    <a href="https://github.com/matteosister/git_elixir/blob/master/lib/git_elixir/command.ex#L10" class="view_source">Source</a>
+  
+</section>
+
+        </section>
+      
+
+      
+
+      
+    </section>
+  </body>
+</html>
