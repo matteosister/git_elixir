@@ -4,7 +4,7 @@ defmodule GitElixir.Mixfile do
   def project do
     [app: :git_elixir,
      version: "0.0.1",
-     elixir: "~> 1.0.0",
+     elixir: ">= 1.0.0",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      deps: deps]
@@ -27,6 +27,6 @@ defmodule GitElixir.Mixfile do
   #
   # Type `mix help deps` for more examples and options
   defp deps do
-    []
+    [{:ex_spec, "~> 0.3.0", only: :test}]
   end
 end
