@@ -2,12 +2,12 @@ defmodule GitElixir.Command.Caller do
   @doc """
   Given a command, execute it and returns a list of output lines
   """
-  def call(args, git \\ true) do
-    if git, do: git_call(args)
+  def call(args, opts \\ []) do
+    git_call(args, opts)
   end
 
-  defp git_call(args) do
-    System.cmd("git", args)
+  defp git_call(args, opts) do
+    System.cmd("git", args, opts)
     |> split_lines
   end
 

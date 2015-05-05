@@ -1,0 +1,4 @@
+ex:
+    image: nifty/elixir
+    volumes:
+        - .:/app
