@@ -1,4 +1,10 @@
 ex:
-    image: nifty/elixir
+    build: .
     volumes:
         - .:/app
+
+mix:
+    build: .
+    volumes:
+        - .:/app
+    entrypoint: ["mix"]
