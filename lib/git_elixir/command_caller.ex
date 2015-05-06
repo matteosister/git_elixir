@@ -3,16 +3,11 @@ defmodule GitElixir.CommandCaller do
   Given a command, execute it and returns a list of output lines
   """
   def call(%GitElixir.Repo{path: path}, args) do
-    git_call(args, [cd: path])
-  end
-
-  defp git_call(args, opts) do
-    System.cmd("git", args, opts)
+    System.cmd("git", args, [cd: path])
     |> split_lines
+    |> Enum.filter(fn (line) -> line != "" end)
   end
-
   
   defp split_lines({output, 0}), do: String.split(output, ~r{\n}, trim: true)
   defp split_lines(_), do: raise "Command error"
-
 end
