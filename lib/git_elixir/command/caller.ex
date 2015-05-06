@@ -1,4 +1,4 @@
-defmodule GitElixir.CommandCaller do
+defmodule GitElixir.Command.Caller do
   @doc """
   Given a command, execute it and returns a list of output lines
   """

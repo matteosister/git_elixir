@@ -1,4 +1,5 @@
 defmodule GitElixir.RepoTest do
+
   use ExSpec, async: true
 
   describe "struct initialization" do
@@ -8,4 +9,5 @@ defmodule GitElixir.RepoTest do
       assert repo.path == ""
     end
   end
+
 end

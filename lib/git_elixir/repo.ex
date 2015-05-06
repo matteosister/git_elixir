@@ -1,7 +1,7 @@
 defmodule GitElixir.Repo do
   
-  alias GitElixir.CommandCaller, as: Caller
-  alias GitElixir.Command, as: Command
+  alias GitElixir.Command.Caller
+  alias GitElixir.Command
 
   defstruct path: "", name: ""
 
