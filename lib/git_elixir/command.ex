@@ -7,7 +7,7 @@ defmodule GitElixir.Command do
     iex> GitElixir.Command.status
     ["status", "--porcelain"]
   """
-  def status, do: ["status", "--porcelain"]
+  def status, do: ~w{ status --porcelain }
 
   @doc """
   Retuns the init command args
@@ -21,8 +21,8 @@ defmodule GitElixir.Command do
     ["init"]
   """
   def init(bare \\ false)
-  def init(bare) when bare == true, do: ["--bare", "init"]
-  def init(_), do: ["init"]
+  def init(bare) when bare == true, do: ~w{ --bare init }
+  def init(_), do: ~w{ init }
 
   @doc """
   Adds elements to the index.
@@ -34,6 +34,6 @@ defmodule GitElixir.Command do
     iex> GitElixir.Command.add("src/")
     ["add", "src/"]
   """
-  def add(what \\ "."), do: ["add", what]
+  def add(what \\ "."), do: ~w{ add #{what} }
 
 end
